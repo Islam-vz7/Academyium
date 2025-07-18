@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include '../include/header.php'; ?>
 
     <!-- Main Content -->
     <main class="pt-24">
@@ -53,4 +53,4 @@
         </section>
     </main>
 
-<?php include 'footer.php'; ?>
+<?php include '../include/footer.php'; ?>

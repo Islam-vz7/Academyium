@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include '../include/header.php'; ?>
 
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center text-center text-white">
@@ -69,4 +69,4 @@
         </div>
     </section>
 
-<?php include 'footer.php'; ?>
+<?php include '../include/footer.php'; ?>

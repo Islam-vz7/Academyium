@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEMIS - Medical Training Excellence</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../include/assets/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" type="image/png" href="../include\assets\img\logo_no text.png">
+
 </head>
 <body class="bg-slate-50 text-slate-800">
 
@@ -16,9 +18,8 @@
     <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-md" id="header">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div>
-                <a href="index.php" class="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                    <i class="ph-bold ph-first-aid-kit text-blue-600"></i>
-                    AEMIS
+                <a href="index.php" class="flex items-center">
+                    <img src="../include\assets\img\logo.png" alt="ACADEMYIUM Logo" class="h-12 w-auto">
                 </a>
             </div>
             <div class="hidden md:flex items-center space-x-8">
