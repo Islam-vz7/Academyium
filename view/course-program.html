@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEMIS - Programme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #2563eb; /* blue-600 */
+        }
+        .section-title {
+            border-bottom: 2px solid #2563eb; /* blue-600 */
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #cbd5e1; /* slate-300 */
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -0.8rem;
+            top: 0;
+            background-color: #2563eb; /* blue-600 */
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-white z-50 shadow-md" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-slate-800">AEMIS</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-slate-600">Home</a>
+                <a href="programme.html" class="nav-link text-blue-600 font-bold">Programme</a>
+                <a href="faculty.html" class="nav-link text-slate-600">Faculty</a>
+                <a href="venue.html" class="nav-link text-slate-600">Venue</a>
+                <a href="registration.html" class="nav-link text-slate-600">Registration</a>
+                <a href="contact.html" class="nav-link text-slate-600">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none">
+                    <i class="ph-bold ph-list text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <a href="index.html" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Home</a>
+            <a href="programme.html" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Programme</a>
+            <a href="faculty.html" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Faculty</a>
+            <a href="venue.html" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Venue</a>
+            <a href="registration.html" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Registration</a>
+            <a href="contact.html" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <section id="programme" class="py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="section-title text-4xl font-bold mb-12 text-center text-slate-800">Course Programme</h1>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-16 text-slate-600">Our intensive two-day programme is structured to maximize hands-on learning, covering a wide array of critical emergency procedures. Each day combines short, focused lectures with extensive practical skill stations.</p>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Day 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-bold mb-8 text-blue-600">Day 1: Airway, Thoracic & Vascular Access</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-identification-card text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">08:00 - 08:30 | Registration & Welcome Coffee</h3>
+                                <p class="text-slate-500">Meet the faculty and fellow participants.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-presentation-chart text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">08:30 - 09:00 | Course Introduction & Aims</h3>
+                                <p class="text-slate-500">Setting the stage for an intensive learning experience.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-person-arms-spread text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">09:00 - 12:00 | Skill Station 1: Advanced Airway Management</h3>
+                                <p class="text-slate-500">Video laryngoscopy, surgical cricothyrotomy, fiberoptic intubation.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-coffee text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">12:00 - 13:00 | Lunch</h3>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-lungs text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">13:00 - 16:00 | Skill Station 2: Thoracic Procedures</h3>
+                                <p class="text-slate-500">Chest drain insertion (Seldinger & open), thoracentesis, emergency thoracotomy.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-vein text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">16:00 - 17:00 | Skill Station 3: Vascular Access</h3>
+                                <p class="text-slate-500">Ultrasound-guided central line, intraosseous access.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-question text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">17:00 - 17:30 | Q&A and Day 1 Wrap-up</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-bold mb-8 text-blue-600">Day 2: Trauma, Ultrasound & Advanced Skills</h2>
+                         <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-first-aid-kit text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">08:30 - 09:00 | Morning Briefing</h3>
+                                <p class="text-slate-500">Review of Day 1 and overview of Day 2.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-heartbeat text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">09:00 - 12:00 | Skill Station 4: POCUS in Trauma</h3>
+                                <p class="text-slate-500">eFAST scan, basic cardiac echo, vascular assessment.</p>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-coffee text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">12:00 - 13:00 | Lunch</h3>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-scalpel text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">13:00 - 16:00 | Skill Station 5: Advanced Surgical Skills</h3>
+                                <p class="text-slate-500">Resuscitative Hysterotomy, Escharotomy, Lateral Canthotomy.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-path text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">16:00 - 17:00 | Integrated Scenarios</h3>
+                                <p class="text-slate-500">Applying learned skills in high-fidelity simulated trauma scenarios.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="ph-bold ph-certificate text-white"></i></div>
+                                <h3 class="font-bold text-lg text-slate-800">17:00 - 17:30 | Course Debrief & Certificates</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2025 AEMIS. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-600">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
