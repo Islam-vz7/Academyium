@@ -61,6 +61,9 @@ $courses = $courseController->getAllCourses();
                                 <td class="p-4 flex gap-2">
                                     <a href="manage-course.php?id=<?php echo $course['id']; ?>" class="action-btn edit" title="Edit"><i class="ph-bold ph-pencil-simple"></i></a>
                                     <a href="courses_dashboard.php?action=delete&id=<?php echo $course['id']; ?>" class="action-btn delete" title="Delete" onclick="return confirm('Are you sure you want to delete this course?');"><i class="ph-bold ph-trash"></i></a>
+                                    <a href="agenda.php?course_id=<?php echo $course['id']; ?>" title="View Agenda">
+                                        <i class="ph-bold ph-calendar-blank text-indigo-600 text-xl"></i>
+                                    </a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
