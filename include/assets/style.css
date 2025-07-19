@@ -1,20 +1,20 @@
 /*
   ========================================
-  AEMIS - Professional & Responsive Stylesheet
+  ACADEMYIUM - Main Website Stylesheet
+  Version: 2.0 (Professional & Responsive)
   ========================================
 */
 
-/* 1. ROOT VARIABLES & GLOBAL STYLES
-  Using CSS variables for easy theme management and consistency.
-*/
+/* --- 1. ROOT VARIABLES & GLOBAL STYLES --- */
 :root {
     --primary-color: #2563eb;
     --primary-hover: #1d4ed8;
+    --secondary-color: #475569;
     --text-dark: #1e293b;
     --text-light: #f8fafc;
     --text-muted: #64748b;
     --bg-light: #f8fafc;
-    --bg-dark: #1e293b;
+    --bg-dark: #111827;
     --border-color: #e2e8f0;
     --font-main: 'Montserrat', sans-serif;
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -32,14 +32,54 @@ body {
     line-height: 1.6;
 }
 
-/*
-  2. CORE COMPONENT STYLES
-  Styling for reusable components like buttons, cards, and navigation.
-*/
+/* --- 2. HEADER & NAVIGATION --- */
+header {
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
 
 
+.form-container {
+        background-color: #ffffff;
+        border-radius: 1rem;
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        overflow: hidden;
+        max-width: 800px;
+        width: 100%;
+        margin: auto;
+    }
+    .form-header {
+        background: linear-gradient(to right, #1e3a8a, #3b82f6);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+    }
+    .feed-form-header {
+        background: linear-gradient(to right, #f59e0b, #fbbf24); /* Amber gradient */
+        color: white;
+        padding: 2rem;
+        text-align: center;
+    }
+    .form-header h1 { font-size: 2.25rem; font-weight: 700; }
+    .form-header p { opacity: 0.9; margin-top: 0.5rem; }
+    .iframe-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 150%; /* Default aspect ratio for a long form */
+    }
+    .iframe-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    .error-message {
+        text-align: center;
+        padding: 4rem;
+        color: #475569;
+    }
 
-/* --- Header & Navigation --- */
 .nav-link {
     transition: color var(--transition-speed) ease;
     font-weight: 500;
@@ -65,7 +105,7 @@ body {
     color: var(--primary-color);
 }
 
-/* --- Hero Section --- */
+/* --- 3. HERO SECTION (HOMEPAGE) --- */
 .hero-video {
     position: absolute;
     top: 50%;
@@ -82,22 +122,28 @@ body {
      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
 }
 
-/* --- Buttons --- */
+/* --- 4. BUTTONS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--text-light);
-    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     box-shadow: var(--shadow-md);
-    border-radius: 8px;
 }
 .btn-primary:hover {
     background-color: var(--primary-hover);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
-}
-.btn-primary:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
 }
 
 .btn-secondary {
@@ -105,21 +151,86 @@ body {
             color: #ffffff;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-.btn-secondary:hover {
+        .btn-secondary:hover {
             background-color: #475569; /* slate-600 */
             transform: translateY(-2px);
         }
-.btn-feedback {
+        .btn-feedback {
             background-color: #f59e0b; /* amber-500 */
             color: #ffffff;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-.btn-feedback:hover {
+        .btn-feedback:hover {
             background-color: #d97706; /* amber-600 */
             transform: translateY(-2px);
         }
 
-/* --- Section Title --- */
+        .btn-cool {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* 8px */
+    padding: 0.75rem 1.5rem; /* 12px 24px */
+    border-radius: 9999px; /* pill shape */
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+}
+
+.btn-cool i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-cool:hover {
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.btn-cool:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Primary Button: Register Now --- */
+.btn-cool.primary {
+    background-image: linear-gradient(to right, #3b82f6, #60a5fa);
+    color: white;
+}
+
+.btn-cool.primary:hover i {
+    transform: translateX(4px);
+}
+
+/* --- Secondary Button: Explore Program --- */
+.btn-cool.secondary {
+    background-color: #ffffff;
+    color: #1e293b; /* slate-800 */
+    border: 2px solid #e2e8f0; /* slate-200 */
+}
+
+.btn-cool.secondary:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+/* --- Feedback Button --- */
+.btn-cool.feedback {
+    background-image: linear-gradient(to right, #f59e0b, #fbbf24);
+    color: white;
+}
+
+.btn-cool.feedback:hover i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* --- 5. GENERAL STYLES (Titles, Cards) --- */
 .section-title {
     border-bottom: 3px solid var(--primary-color);
     padding-bottom: 0.75rem;
@@ -127,125 +238,50 @@ body {
     font-weight: 700;
 }
 
-/* --- Course Cards --- */
-.course-card {
+.faculty-card {
     background-color: #ffffff;
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 1rem;
     box-shadow: var(--shadow-md);
 }
-.course-card:hover {
-    transform: translateY(-10px);
+.faculty-card:hover {
+    transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
 }
-.course-card img {
-    transition: transform var(--transition-speed) ease;
-}
-.course-card:hover img {
-    transform: scale(1.05);
-}
 
-
-/* --- Gallery & Carousel --- */
-.gallery-img {
-    transition: transform var(--transition-speed) ease, filter var(--transition-speed) ease;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* --- 6. FOOTER --- */
+footer {
+    background-color: var(--bg-dark);
+    color: #9ca3af; /* gray-400 */
 }
-.gallery-img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
+footer a {
+    transition: color var(--transition-speed) ease;
+}
+footer a:hover {
+    color: var(--text-light);
 }
 
-.swiper-container {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 50px; /* Space for pagination */
-}
-
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-}
-
-.swiper-pagination-bullet {
-    background: var(--text-muted);
-    opacity: 0.7;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--primary-color);
-    opacity: 1;
-}
-
-
-
-
-/*
-  3. RESPONSIVE MEDIA QUERIES
-  Adapting the layout for tablets and mobile phones.
-*/
-
-/* --- Tablet (and smaller) --- */
+/* --- 7. RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem; /* Tailwind 'text-4xl' */
-    }
-    .hero-section p {
-        font-size: 1.125rem; /* Tailwind 'text-lg' */
-    }
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
-    
 }
 
-/* --- Mobile Phone (and smaller) --- */
 @media (max-width: 480px) {
     body {
         font-size: 14px;
     }
-    
     header nav {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-
-    .hero-section h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-    .hero-section p {
-        font-size: 1rem;
-    }
-    
     section {
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
-
     .section-title {
-        font-size: 1.75rem;
-    }
-
-    .course-card .p-6 {
-        padding: 1rem;
-    }
-    .course-card h3 {
-        font-size: 1.1rem;
-    }
-    .course-card p {
-        font-size: 0.9rem;
-        height: auto; /* Allow text to wrap naturally */
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
 }

@@ -6,6 +6,7 @@ include '../include/header.php';
 ?>
 
 
+
     <main class="pt-24">
         <section class="py-20">
             <div class="container mx-auto px-6">
@@ -27,17 +28,30 @@ include '../include/header.php';
                                     </div>
                                     <p class="text-slate-600 mb-6"><?php echo nl2br(htmlspecialchars($course['description'])); ?></p>
                                 </div>
-                                <div class="flex items-center flex-wrap gap-4 mt-4">
-                                    <a href="course-program.php?course_id=<?php echo $course['id']; ?>" class="btn-secondary font-bold py-2 px-6 rounded-lg">Explore Program</a>
-                                    <a href="<?php echo htmlspecialchars($course['registration_form_link']); ?>" target="_blank" class="btn-primary font-bold py-2 px-6 rounded-lg">Register Now</a>
-                                    <?php
-                                        $today = new DateTime();
-                                        $endDate = new DateTime($course['end_date']);
-                                        if ($today > $endDate && !empty($course['feedback_form_link'])):
-                                    ?>
-                                        <a href="<?php echo htmlspecialchars($course['feedback_form_link']); ?>" target="_blank" class="btn-feedback font-bold py-2 px-6 rounded-lg">Give Feedback</a>
-                                    <?php endif; ?>
-                                </div>
+                                <div class="course-actions-professional">
+                                <a href="course-program.php?course_id=<?php echo $course['id']; ?>" class="btn-cool secondary">
+                                    <i class="ph-bold ph-magnifying-glass"></i>
+                                    <span>Explore</span>
+                                </a>
+                                
+                                <?php if (!empty($course['registration_form_link'])): ?>
+                                    <a href="registration.php?form_link=<?php echo urlencode($course['registration_form_link']); ?>" class="btn-cool primary">
+                                        <span>Register Now</span>
+                                        <i class="ph-bold ph-arrow-right"></i>
+                                    </a>
+                                <?php endif; ?>
+
+                                <?php
+                                    $today = new DateTime();
+                                    $endDate = new DateTime($course['end_date']);
+                                    if ($today > $endDate && !empty($course['feedback_form_link'])):
+                                ?>
+                                    <a href="feedback.php?form_link=<?php echo urlencode($course['feedback_form_link']); ?>" class="btn-cool feedback">
+                                        <i class="ph-bold ph-star"></i>
+                                        <span>Feedback</span>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
                             </div>
                         </div>
                         <?php endforeach; ?>

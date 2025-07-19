@@ -14,6 +14,7 @@
         </div>
     </section>
 
+
     <!-- Featured Courses Section -->
     <section id="courses" class="py-20">
         <div class="container mx-auto px-6">
