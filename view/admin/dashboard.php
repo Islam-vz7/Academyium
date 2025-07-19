@@ -1,13 +1,6 @@
 <?php
-// Check for admin session, otherwise redirect to login.
-// session_start();
-// if (!isset($_SESSION['admin_user'])) {
-//     header('Location: login.php');
-//     exit();
-// }
-
-// PHP logic to fetch courses from the database would go here.
-// $courses = fetch_all_courses();
+session_start();
+if ($_SESSION['email'] == 'admin@site.com') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +27,13 @@
                 <a href="#" class="sidebar-link"><i class="ph-bold ph-gear"></i><span>Settings</span></a>
             </nav>
             <div class="p-4">
-                <a href="login.php" class="sidebar-link logout"><i class="ph-bold ph-sign-out"></i><span>Logout</span></a>
+              <form action="../../controller/adminController/logout.php" method="POST">
+                <button type="submit" name="logout" value="1" class="sidebar-link logout">
+                    <i class="ph-bold ph-sign-out"></i>
+                    <span>Logout</span>
+                </button>
+               </form>
+
             </div>
         </aside>
 
@@ -98,3 +97,9 @@
 
 </body>
 </html>
+ <?php
+} else {
+    header("location: ../../view/admin/login.php");
+    die();
+}
+?>
