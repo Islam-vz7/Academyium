@@ -1,6 +1,12 @@
 <?php
 session_start();
-if ($_SESSION['email'] == 'admin@site.com') {
+// Redirect to login if not authenticated
+if (!isset($_SESSION['email']) || $_SESSION['email'] !== 'admin@site.com') {
+    header("location: ../../view/admin/login.php");
+    exit();
+}
+// Extract user name from email for a personalized welcome
+$userName = explode('@', $_SESSION['email'])[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,94 +18,55 @@ if ($_SESSION['email'] == 'admin@site.com') {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="../../include/assets/admin-style.css">
+    <!-- New styles for the redesigned dashboard -->
+    
 </head>
 <body class="bg-slate-100">
-
     <div class="flex h-screen">
-        <!-- Sidebar -->
-        <aside class="w-64 bg-slate-800 text-white flex flex-col">
-            <div class="p-6 text-center">
-                <img src="../../include\assets\img\logo.png" alt="ACADEMYIUM Logo" class="h-12 w-auto mx-auto mb-4">
-            </div>
-            <nav class="flex-1 px-4 py-2 space-y-2">
-                <a href="#" class="sidebar-link active"><i class="ph-bold ph-chalkboard"></i><span>Courses</span></a>
-                <a href="#" class="sidebar-link"><i class="ph-bold ph-users"></i><span>Users</span></a>
-                <a href="#" class="sidebar-link"><i class="ph-bold ph-gear"></i><span>Settings</span></a>
-            </nav>
-            <div class="p-4">
-              <form action="../../controller/adminController/logout.php" method="POST">
-                <button type="submit" name="logout" value="1" class="sidebar-link logout">
-                    <i class="ph-bold ph-sign-out"></i>
-                    <span>Logout</span>
-                </button>
-               </form>
-
-            </div>
-        </aside>
-
-        <!-- Main Content -->
+        <?php include 'sidebar.php'; ?>
         <main class="flex-1 p-8 overflow-y-auto">
-            <div class="flex justify-between items-center mb-8">
-                <h1 class="text-3xl font-bold text-slate-800">Course Management</h1>
-                <button class="btn-primary flex items-center gap-2 py-2 px-4 rounded-lg font-semibold">
-                    <i class="ph-bold ph-plus-circle"></i>
-                    Add New Course
-                </button>
+            <!-- Welcome Banner -->
+            <div class="welcome-banner text-white p-8 rounded-lg mb-8">
+                <h1 class="text-3xl font-bold">Welcome back, <?php echo htmlspecialchars(ucfirst($userName)); ?>!</h1>
+                <p class="mt-2">Here's a quick overview of your site's content.</p>
             </div>
 
-            <!-- Courses Table -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <table class="w-full">
-                    <thead class="bg-slate-50 border-b border-slate-200">
-                        <tr>
-                            <th class="p-4 text-left font-semibold text-slate-600">Course Name</th>
-                            <th class="p-4 text-left font-semibold text-slate-600">Price</th>
-                            <th class="p-4 text-left font-semibold text-slate-600">Status</th>
-                            <th class="p-4 text-left font-semibold text-slate-600">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Example Row 1 -->
-                        <tr class="border-b border-slate-200">
-                            <td class="p-4">Advanced Trauma Interventions</td>
-                            <td class="p-4">€1500</td>
-                            <td class="p-4"><span class="status-badge published">Published</span></td>
-                            <td class="p-4 flex gap-2">
-                                <button class="action-btn edit"><i class="ph-bold ph-pencil-simple"></i></button>
-                                <button class="action-btn delete"><i class="ph-bold ph-trash"></i></button>
-                            </td>
-                        </tr>
-                        <!-- Example Row 2 -->
-                        <tr class="border-b border-slate-200">
-                            <td class="p-4">Pediatric Emergency Care</td>
-                            <td class="p-4">€1100</td>
-                            <td class="p-4"><span class="status-badge published">Published</span></td>
-                            <td class="p-4 flex gap-2">
-                                <button class="action-btn edit"><i class="ph-bold ph-pencil-simple"></i></button>
-                                <button class="action-btn delete"><i class="ph-bold ph-trash"></i></button>
-                            </td>
-                        </tr>
-                        <!-- Example Row 3 -->
-                        <tr class="border-b border-slate-200">
-                            <td class="p-4">Critical Care Ultrasound</td>
-                            <td class="p-4">€950</td>
-                            <td class="p-4"><span class="status-badge draft">Draft</span></td>
-                            <td class="p-4 flex gap-2">
-                                <button class="action-btn edit"><i class="ph-bold ph-pencil-simple"></i></button>
-                                <button class="action-btn delete"><i class="ph-bold ph-trash"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Quick Stats Section (Example) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="stat-card">
+                    <div class="bg-blue-100 text-blue-600 p-3 rounded-full"><i class="ph-bold ph-chalkboard text-2xl"></i></div>
+                    <div>
+                        <p class="text-slate-500 text-sm">Total Courses</p>
+                        <p class="text-2xl font-bold text-slate-800">##</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="bg-green-100 text-green-600 p-3 rounded-full"><i class="ph-bold ph-users-three text-2xl"></i></div>
+                    <div>
+                        <p class="text-slate-500 text-sm">Faculty Members</p>
+                        <p class="text-2xl font-bold text-slate-800">##</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Main Navigation Cards -->
+            <div>
+                <h2 class="text-2xl font-semibold text-slate-700 mb-4">Manage Content</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="courses_dashboard.php" class="nav-card nav-card-courses">
+                        <i class="ph-bold ph-chalkboard icon-bg"></i>
+                        <h3 class="font-bold text-2xl">Manage Courses</h3>
+                        <p class="mt-2 opacity-80">Add, edit, or remove course listings and details.</p>
+                    </a>
+                    <a href="faculty.php" class="nav-card nav-card-faculty">
+                        <i class="ph-bold ph-users-three icon-bg"></i>
+                        <h3 class="font-bold text-2xl">Manage Faculty</h3>
+                        <p class="mt-2 opacity-80">Update faculty profiles and information.</p>
+                    </a>
+                </div>
             </div>
         </main>
     </div>
-
 </body>
 </html>
- <?php
-} else {
-    header("location: ../../view/admin/login.php");
-    die();
-}
-?>

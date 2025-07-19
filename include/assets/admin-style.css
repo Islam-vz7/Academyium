@@ -1,16 +1,19 @@
 /*
   ========================================
   AEMIS - Admin Panel Stylesheet
+  Version: 2.0 (Cleaned & Organized)
   ========================================
 */
 
+/* --- 1. Global Styles & Variables --- */
 body {
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #f1f5f9; /* slate-100 */
 }
 
-/* --- Login & Register Page --- */
+/* --- 2. Login & Register Page --- */
 .login-container {
     background-color: #ffffff;
     padding: 2.5rem;
@@ -24,55 +27,110 @@ body {
     width: 100%;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    border: 1px solid #cbd5e1;
-    background-color: #f8fafc;
+    border: 1px solid #cbd5e1; /* slate-300 */
+    background-color: #f8fafc; /* slate-50 */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .form-input:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #2563eb; /* blue-600 */
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-/* --- Admin Dashboard --- */
+/* --- 3. Admin Sidebar --- */
 .sidebar-link {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    color: #cbd5e1;
+    color: #cbd5e1; /* slate-300 */
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .sidebar-link:hover {
-    background-color: #334155;
+    background-color: #334155; /* slate-700 */
     color: #ffffff;
 }
 .sidebar-link.active {
-    background-color: #2563eb;
+    background-color: #2563eb; /* blue-600 */
     color: #ffffff;
 }
 .sidebar-link.logout:hover {
-    background-color: #ef4444;
+    background-color: #ef4444; /* red-500 */
 }
-
 .sidebar-link i {
     font-size: 1.25rem;
 }
 
-/* --- Buttons --- */
+/* --- 4. Main Dashboard Page --- */
+.welcome-banner {
+    background: linear-gradient(to right, #1e3a8a, #3b82f6); /* dark blue to light blue */
+}
+
+.stat-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.nav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.nav-card-courses {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa); /* blue gradient */
+}
+.nav-card-faculty {
+    background: linear-gradient(135deg, #16a34a, #4ade80); /* green gradient */
+}
+.nav-card .icon-bg {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 7rem;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+}
+
+/* --- 5. Buttons --- */
 .btn-primary {
-    background-color: #2563eb;
+    background-color: #2563eb; /* blue-600 */
     color: #ffffff;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 0.5rem;
 }
 .btn-primary:hover {
-    background-color: #1d4ed8;
+    background-color: #1d4ed8; /* blue-700 */
     transform: translateY(-2px);
 }
 
-/* --- Table & Badges --- */
+.btn-secondary {
+    background-color: #64748b; /* slate-500 */
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+.btn-secondary:hover {
+    background-color: #475569; /* slate-600 */
+}
+
+
+/* --- 6. Tables & Badges --- */
 .status-badge {
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
@@ -81,24 +139,24 @@ body {
     text-transform: uppercase;
 }
 .status-badge.published {
-    background-color: #dcfce7;
-    color: #166534;
+    background-color: #dcfce7; /* green-100 */
+    color: #166534; /* green-800 */
 }
 .status-badge.draft {
-    background-color: #e0e7ff;
-    color: #4338ca;
+    background-color: #e0e7ff; /* indigo-100 */
+    color: #4338ca; /* indigo-800 */
 }
 
 .action-btn {
     padding: 0.5rem;
     border-radius: 0.375rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .action-btn.edit:hover {
-    background-color: #e0e7ff;
-    color: #4f46e5;
+    background-color: #e0e7ff; /* indigo-100 */
+    color: #4f46e5; /* indigo-600 */
 }
 .action-btn.delete:hover {
-    background-color: #fee2e2;
-    color: #dc2626;
+    background-color: #fee2e2; /* red-100 */
+    color: #dc2626; /* red-600 */
 }

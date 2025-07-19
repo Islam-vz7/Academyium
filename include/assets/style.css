@@ -37,6 +37,8 @@ body {
   Styling for reusable components like buttons, cards, and navigation.
 */
 
+
+
 /* --- Header & Navigation --- */
 .nav-link {
     transition: color var(--transition-speed) ease;
@@ -97,6 +99,25 @@ body {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+
+.btn-secondary {
+            background-color: #64748b; /* slate-500 */
+            color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+.btn-secondary:hover {
+            background-color: #475569; /* slate-600 */
+            transform: translateY(-2px);
+        }
+.btn-feedback {
+            background-color: #f59e0b; /* amber-500 */
+            color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+.btn-feedback:hover {
+            background-color: #d97706; /* amber-600 */
+            transform: translateY(-2px);
+        }
 
 /* --- Section Title --- */
 .section-title {
@@ -165,6 +186,8 @@ body {
     background: var(--primary-color);
     opacity: 1;
 }
+
+
 
 
 /*

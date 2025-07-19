@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AEMIS - Medical Training Excellence</title>
+    <title>Academyium Courses</title>
     <link rel="stylesheet" href="../include/assets/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,15 +19,16 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div>
                 <a href="index.php" class="flex items-center">
-                    <img src="../include\assets\img\logo.png" alt="ACADEMYIUM Logo" class="h-12 w-auto">
+                    <img src="../include/assets/img/logo.png" alt="ACADEMYIUM Logo" class="h-12 w-auto">
                 </a>
             </div>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="index.php" class="nav-link text-blue-600 font-bold active">Home</a>
-                <a href="courses.php" class="nav-link text-slate-600">All Courses</a>
-                <a href="about.php" class="nav-link text-slate-600">About Us</a>
-                <a href="contact.php" class="nav-link text-slate-600">Contact</a>
-                <a href="course-registeration.php" class="ml-4 btn-primary font-bold py-2 px-5 rounded-lg text-sm">Register</a>
+                <a href="index.php" class="nav-link">Home</a>
+                <a href="courses.php" class="nav-link">All Courses</a>
+                <a href="faculty.php" class="nav-link">Faculty</a>
+                <a href="about.php" class="nav-link">About Us</a>
+                <a href="contact.php" class="nav-link">Contact</a>
+                <a href="#" class="ml-4 btn-primary font-bold py-2 px-5 rounded-lg text-sm">Register</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-slate-800 focus:outline-none">
@@ -39,8 +40,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
             <a href="index.php" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">Home</a>
             <a href="courses.php" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">All Courses</a>
+            <a href="faculty.php" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">Faculty</a>
             <a href="about.php" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">About Us</a>
             <a href="contact.php" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">Contact</a>
-            <a href="course-registeration.php" class="block py-3 px-4 text-blue-600 font-bold hover:bg-slate-100">Register Now</a>
+            <a href="#" class="block py-3 px-4 text-blue-600 font-bold hover:bg-slate-100">Register Now</a>
         </div>
     </header>

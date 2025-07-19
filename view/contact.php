@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AEMIS - Contact Us</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <style>
+<?php include '../include/header.php'; ?>
+
+    <!-- Main Content -->
+
+    <body>
+        <style>
         body { font-family: 'Montserrat', sans-serif; }
         .nav-link { transition: color 0.3s ease; font-weight: 500; }
         .nav-link:hover, .nav-link.active { color: #2563eb; }
@@ -18,32 +14,7 @@
         .form-input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4); }
         .contact-info-card { background-color: #ffffff; }
     </style>
-</head>
-<body class="bg-slate-50 text-slate-800">
-
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div><a href="index.html" class="text-2xl font-bold text-slate-900 flex items-center gap-2"><i class="ph-bold ph-first-aid-kit text-blue-600"></i>AEMIS</a></div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="nav-link text-slate-600">Home</a>
-                <a href="courses.html" class="nav-link text-slate-600">All Courses</a>
-                <a href="about.html" class="nav-link text-slate-600">About Us</a>
-                <a href="contact.html" class="nav-link text-blue-600 font-bold active">Contact</a>
-                <a href="course-registeration.html" class="ml-4 btn-primary font-bold py-2 px-5 rounded-lg text-sm">Register</a>
-            </div>
-            <div class="md:hidden"><button id="mobile-menu-button" class="text-slate-800 focus:outline-none"><i class="ph-bold ph-list text-2xl"></i></button></div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
-            <a href="index.html" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">Home</a>
-            <a href="courses.html" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">All Courses</a>
-            <a href="about.html" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">About Us</a>
-            <a href="contact.html" class="block py-3 px-4 text-slate-600 hover:bg-slate-100">Contact</a>
-            <a href="registration.html" class="block py-3 px-4 text-blue-600 font-bold hover:bg-slate-100">Register Now</a>
-        </div>
-    </header>
-
-    <!-- Main Content -->
+    </body>
     <main class="pt-32">
         <section id="contact" class="pb-20">
             <div class="container mx-auto px-6">
@@ -63,7 +34,7 @@
                     </div>
                     <div class="lg:w-1/3">
                         <div class="space-y-6">
-                            <div class="contact-info-card p-6 rounded-lg shadow-xl flex items-start gap-4">
+                            <div class="contact-info-card p-6 rounded-lg shadow-xl flex items-start gap-4 bg-white">
                                 <i class="ph-bold ph-envelope-simple text-3xl text-blue-600 mt-1"></i>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-900">Email Us</h3>
@@ -71,7 +42,7 @@
                                     <a href="mailto:info@aemis-training.com" class="text-blue-500 hover:underline">info@aemis-training.com</a>
                                 </div>
                             </div>
-                            <div class="contact-info-card p-6 rounded-lg shadow-xl flex items-start gap-4">
+                            <div class="contact-info-card p-6 rounded-lg shadow-xl flex items-start gap-4 bg-white">
                                 <i class="ph-bold ph-phone text-3xl text-blue-600 mt-1"></i>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-900">Call Us</h3>
@@ -79,7 +50,7 @@
                                     <a href="tel:+420123456789" class="text-blue-500 hover:underline">+420 123 456 789</a>
                                 </div>
                             </div>
-                            <div class="contact-info-card p-6 rounded-lg shadow-xl flex items-start gap-4">
+                            <div class="contact-info-card p-6 rounded-lg shadow-xl flex items-start gap-4 bg-white">
                                 <i class="ph-bold ph-map-pin-line text-3xl text-blue-600 mt-1"></i>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-900">Our Headquarters</h3>
@@ -93,18 +64,4 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-300 py-12">
-        <div class="container mx-auto px-6 text-center"><p>&copy; 2025 AEMIS Medical Training. All Rights Reserved.</p></div>
-    </footer>
-
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message. We will get back to you shortly.');
-            e.target.reset();
-        });
-    </script>
-</body>
-</html>
+<?php include '../include/footer.php'; ?>
